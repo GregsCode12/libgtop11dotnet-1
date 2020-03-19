@@ -138,8 +138,8 @@ AM_CPPFLAGS = -DCRYPTOKI_EXPORTS=1 \
 
 if ENABLE_SYSTEM_BOOST
 else
-BOOST_INCLUDES = -I../boost_1_46_1
-BOOST_LIB = -L../boost_1_46_1/stage/lib
+BOOST_INCLUDES = -I/usr/include/boost
+BOOST_LIB = -L/usr/lib/x86_64-linux-gnu
 endif
 
 INCLUDES = \
