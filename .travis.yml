@@ -1,0 +1,19 @@
+language: cpp
+compoiler: gcc
+dist: bionic
+
+before_install:
+  - sudo apt-get update
+
+install:
+  - sudo apt-get install libboost-all-dev
+  - sudo apt install git automake autoconf pkg-config zlib1g-dev libpcsclite1 libpcsclite-dev libboost-all-dev opensc checkinstall
+  - sudo cp /usr/include/PCSC/* /usr/include
+  
+
+script: 
+  - ./autogen.sh
+  - ./configure --enable-system-boost CXXFLAGS=-std=c++03
+  - make
+  - mv /home/travis/build/GregsCode12/libgtop11dotnet /home/travis/build/GregsCode12/libgtop11dotnet-1
+  - sudo checkinstall -y 
