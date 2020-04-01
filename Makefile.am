@@ -134,7 +134,9 @@ AM_CPPFLAGS = -DCRYPTOKI_EXPORTS=1 \
 	-DUNIX $(PTHREAD_CFLAGS) \
 	-Wall \
 	-Wextra \
-	-pedantic
+	-pedantic \
+	$(BOOST_INCLUDES) \
+	$(PSCS_CFLAGS)
 
 if ENABLE_SYSTEM_BOOST
 else
@@ -145,6 +147,9 @@ endif
 INCLUDES = \
 	$(BOOST_INCLUDES) \
 	$(PCSC_CFLAGS)
+
+
+AM_CXXFLAGS= -std=c++03
 
 LIBS = \
     $(PCSC_LIBS) \
@@ -163,4 +168,3 @@ EXTRA_DIST = autogen.sh c-mac.sh ./docs/LGPL-2.1 ./config/Gemalto.NET.PKCS11.ini
 install-exec-hook:
 	$(MKDIR_P) $(DESTDIR)/$(prefix)/lib/pkcs11
 	cd $(DESTDIR)/$(prefix)/lib/pkcs11 ; rm -f libgtop11dotnet.@DYN_LIB_EXT@ ; $(LN_S) ../libgtop11dotnet.@DYN_LIB_EXT@
-
