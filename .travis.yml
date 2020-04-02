@@ -5,20 +5,21 @@ os: linux
 addons:
   artifacts: true
 before_script:
-  - sudo apt-get update
-  - sudo apt-get upgrade
-  - sudo apt-get install libboost-all-dev git automake autoconf dh-make fakeroot libpcsclite-dev pcscd pcsc-tools -y
+- sudo apt-get update
+- sudo apt-get upgrade
+- sudo apt-get install libboost-all-dev git automake autoconf dh-make fakeroot libpcsclite-dev
+  pcscd pcsc-tools -y
 script:
-  - mkdir libgtop11dotnet-1.1
-  - wget -qO- https://github.com/GregsCode12/libgtop11dotnet-1/tarball/Fix-build-code| tar  -xvzf - -C libgtop11dotnet-1.1 --strip 1
-  - cd libgtop11dotnet-1.1
-  - dh_make --createorig --single -y
-  - dpkg-buildpackage -us -uc
+- mkdir libgtop11dotnet-1.1
+- wget -qO- https://github.com/GregsCode12/libgtop11dotnet-1/tarball/Fix-build-code|
+  tar  -xvzf - -C libgtop11dotnet-1.1 --strip 1
+- cd libgtop11dotnet-1.1
+- dh_make --createorig --single -y
+- dpkg-buildpackage -us -uc
 deploy:
-  provider: releases
-  skip_cleanup: true
-  username: "GregsCode12"
-  password:
-     secure: WDArjGkC46Tj2ypZb8ipSFYpm0Wx+nqmV0RRgRLZhWcps5/rX7JfJOm/K7LhP4ijgZ4NAP3bVu0TV+LbHbKkRdBIwcSMaKGDam0vmfhSDSk2Mhv0o26Y2US8UGxFwgmV+LSDapMmuWhBpgHy/cnA0JKk5xOUTFAupEVHNMVY0sEqQyCcgbMwFDzSWa+CIWgmBqdVW8pyMtvzoiSEudbe+00YSSYpeCX+QXnZb7lrhl4h9k+hroeOx7rgYJawPGcfFoehQTgIRkIQb2Sp7T8tEO/p81UJKlShyLWpQLl6JLORsa/8QkJZL53yrvE62+DCIkH7nFoGCzgtlfOCVcu66qC5JcHJ2e1+TkCdTyb99hHt8wPtZ6dTFz4nimRyRCS/h1rctLejH9fXTuw/CeiCfIcVx5DzBVz8CdrOafK9LE+319FMngYFcMBg0kEfujJD9ssqW9oNbZaCoXB00jjRZ/7AyS2WrziT6ZAW8+RpyoNtB68lq9W5ZIWV2v7newuOfHBW4pRGONLETYI4BWQyntN1zRUobpHuRLN3SXFzUFyDuS9XrkgSoVhFp1yhNgvOWcvR1bitDsqKUAziecK51JGbDUhffRSp0XkVJmv3nSOKR7tzMmJHbyl0yvaf9f1W/gz/zL5ko5tgmXEOh7lEI2JtnhGj1qIztjVTZr8q4HI=
-  file_glob: true
-  file: "/home/travis/build/GOGO-d-o-o/libgtop11dotnet/libgtop11dotnet-1.1"
+  provider: packagecloud
+  repository: https://packagecloud.io/GregsCode12/testRepo
+  username: GregsCode12
+  token:
+    secure: uepHtyNWU70nqnfCDNKJFBwFt3PzcDCPBYh+hu/Dnw9jj0ME/b2m8cfR24NsIm+ZzCRXurfCU47ORR97+vSR0RmNHXVYjMefNZK89dQ8lCgLYc5TwCujRNBD29oteJlqSXC3TnmfOz6R+vPALxxxIY6ff7snUkMosS+GitSxR0n9qXctqWRQ4NlVJitYH8Ia8N2JySQxzz94i7oLExnDW5IUVEndvX0lCpEDbhdstJn8XNyBjoBq8J5mRRwfiGEZ2PMwwmifZH8ALQzNntLUQcsXyVCLzoHiNSRxIUeR7GvHJIL0cAO07M45ZsqN7d77hIAEbqJSvD6tySsY0QyxwSvVELzK62OHYTVYBnCu0GaJnGNuvZVhv4eB/N26O8sZgkRHQEXU/8moRPvsvjHUu2osJ7hoRYE2X7ICUGRmxXX3UamBNGvaEGmM2QeXCmuyx3joxAK/CKPD30fgmFYCMq5dxjdvxbfRVZhIZ7OCNqlguZaUjltFjt13PZymUIJ8iuu98tBgYjRoUMWUGrYPYi0ojVaxRZwb0R8VREw2o8E7BssY7uWBt7KcB3dwJIZVMHAy+9BIPAy3LdOBmGTNphfu0v7C2Cq6/ECDWDUPRqQ0AemuZEwv80rRk/XaFZcYI9hi925ucmpaPQWeTS1zzgUysYmu5CtjL6bGCQa9uzI=
+  dist: ubuntu/precise
