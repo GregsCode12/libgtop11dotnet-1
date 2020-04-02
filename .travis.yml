@@ -7,17 +7,15 @@ before_script:
   - sudo apt-get update
   - sudo apt-get upgrade
   - sudo apt-get install libboost-all-dev git automake autoconf dh-make fakeroot libpcsclite-dev pcscd pcsc-tools -y
-
 script:
   - mkdir libgtop11dotnet-1.1
   - wget -qO- https://github.com/GregsCode12/libgtop11dotnet-1/tarball/Fix-build-code| tar  -xvzf - -C libgtop11dotnet-1.1 --strip 1
   - cd libgtop11dotnet-1.1
   - dh_make --createorig --single -y
   - dpkg-buildpackage -us -uc
-
 deploy:
-  provider: pages
+  provider: releases
   skip_cleanup: true
-  keep_history: true
-  github_token:
-    secure: a88XdkYhLTnjlwX1NDFV9bsyzQ7B8ZjTEtHxFoEztKS6fR/iBVNqGgxPT1ykB/J5Ie44P5qDFUWM1XYT6PodMuz/6+KSQb44yZda+VRboTROIPjKWDTi3FSuoO4l1ZVshUQIrgl9xNMxXs8Os3U4LxZ+6krAMRwtv9l5Bp3wwbOAyftAzAEk27/1KFi5U1GJ5KnTH5zb8/m07jha6df1ZzWyNSYyCkEkzTNA0V0O6t5HdNUh8TzjKaoHADJ8RW2EaHYIKVrUACtkybhIkx/puYMhCM6k4f7CKFHLgZ0OBnW7ARi/cWGyP8kpCK9VCOvsiDctA6GAZ7KdVtvQEQgSzVlgjqVuLf+GRUXUlJ6xmHqDYRvVPu9AJd4mM8IIpe+y2SlWLOWZh+XUMnrOZZUo8gKk2OdW4YqKkzDhHmE7tP9FLJv8LQrqt3HI5GGcG8kirHFWqQOxP5qO6123Ir1XvJ+RNxiFs6cGW1AjouPxyOAm+WmYI3ZJ1P97yDHtaBf/zda2uodQDF3kSEzmbARUjxZTvNwgUHsRs3wHrGs1vbJKERI87UNCvsoFt438pK/b9hJKDy0ZUGsTqDN7wkYuAz9I597Ne/I9xgRdkDCXI2P/OWaQTtc3eVYnZ10cGA7CwgEmyr2WLXCAbxt+KccaHlupCgDIWuWQqLv1d9gFw94=
+  user: "GregsCode12"
+  password:
+    secure: WDArjGkC46Tj2ypZb8ipSFYpm0Wx+nqmV0RRgRLZhWcps5/rX7JfJOm/K7LhP4ijgZ4NAP3bVu0TV+LbHbKkRdBIwcSMaKGDam0vmfhSDSk2Mhv0o26Y2US8UGxFwgmV+LSDapMmuWhBpgHy/cnA0JKk5xOUTFAupEVHNMVY0sEqQyCcgbMwFDzSWa+CIWgmBqdVW8pyMtvzoiSEudbe+00YSSYpeCX+QXnZb7lrhl4h9k+hroeOx7rgYJawPGcfFoehQTgIRkIQb2Sp7T8tEO/p81UJKlShyLWpQLl6JLORsa/8QkJZL53yrvE62+DCIkH7nFoGCzgtlfOCVcu66qC5JcHJ2e1+TkCdTyb99hHt8wPtZ6dTFz4nimRyRCS/h1rctLejH9fXTuw/CeiCfIcVx5DzBVz8CdrOafK9LE+319FMngYFcMBg0kEfujJD9ssqW9oNbZaCoXB00jjRZ/7AyS2WrziT6ZAW8+RpyoNtB68lq9W5ZIWV2v7newuOfHBW4pRGONLETYI4BWQyntN1zRUobpHuRLN3SXFzUFyDuS9XrkgSoVhFp1yhNgvOWcvR1bitDsqKUAziecK51JGbDUhffRSp0XkVJmv3nSOKR7tzMmJHbyl0yvaf9f1W/gz/zL5ko5tgmXEOh7lEI2JtnhGj1qIztjVTZr8q4HI=
