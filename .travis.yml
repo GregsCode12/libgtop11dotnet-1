@@ -15,13 +15,13 @@ script:
   - dh_make --createorig --single -y
   - dpkg-buildpackage -us -uc
 deploy:
-  - provider: releases
-  - skip_cleanup: true
-  - username: "GregsCode12"
-  - password:
-     - secure: WDArjGkC46Tj2ypZb8ipSFYpm0Wx+nqmV0RRgRLZhWcps5/rX7JfJOm/K7LhP4ijgZ4NAP3bVu0TV+LbHbKkRdBIwcSMaKGDam0vmfhSDSk2Mhv0o26Y2US8UGxFwgmV+LSDapMmuWhBpgHy/cnA0JKk5xOUTFAupEVHNMVY0sEqQyCcgbMwFDzSWa+CIWgmBqdVW8pyMtvzoiSEudbe+00YSSYpeCX+QXnZb7lrhl4h9k+hroeOx7rgYJawPGcfFoehQTgIRkIQb2Sp7T8tEO/p81UJKlShyLWpQLl6JLORsa/8QkJZL53yrvE62+DCIkH7nFoGCzgtlfOCVcu66qC5JcHJ2e1+TkCdTyb99hHt8wPtZ6dTFz4nimRyRCS/h1rctLejH9fXTuw/CeiCfIcVx5DzBVz8CdrOafK9LE+319FMngYFcMBg0kEfujJD9ssqW9oNbZaCoXB00jjRZ/7AyS2WrziT6ZAW8+RpyoNtB68lq9W5ZIWV2v7newuOfHBW4pRGONLETYI4BWQyntN1zRUobpHuRLN3SXFzUFyDuS9XrkgSoVhFp1yhNgvOWcvR1bitDsqKUAziecK51JGbDUhffRSp0XkVJmv3nSOKR7tzMmJHbyl0yvaf9f1W/gz/zL5ko5tgmXEOh7lEI2JtnhGj1qIztjVTZr8q4HI=
-  - file_glob: true
-  - file: 
-     - "/home/travis/build/GOGO-d-o-o/libgtop11dotnet/libgtop11dotnet-1.1"
-  - on: 
-    - tags: false
+  provider: releases
+  skip_cleanup: true
+  username: "GregsCode12"
+  password:
+     secure: WDArjGkC46Tj2ypZb8ipSFYpm0Wx+nqmV0RRgRLZhWcps5/rX7JfJOm/K7LhP4ijgZ4NAP3bVu0TV+LbHbKkRdBIwcSMaKGDam0vmfhSDSk2Mhv0o26Y2US8UGxFwgmV+LSDapMmuWhBpgHy/cnA0JKk5xOUTFAupEVHNMVY0sEqQyCcgbMwFDzSWa+CIWgmBqdVW8pyMtvzoiSEudbe+00YSSYpeCX+QXnZb7lrhl4h9k+hroeOx7rgYJawPGcfFoehQTgIRkIQb2Sp7T8tEO/p81UJKlShyLWpQLl6JLORsa/8QkJZL53yrvE62+DCIkH7nFoGCzgtlfOCVcu66qC5JcHJ2e1+TkCdTyb99hHt8wPtZ6dTFz4nimRyRCS/h1rctLejH9fXTuw/CeiCfIcVx5DzBVz8CdrOafK9LE+319FMngYFcMBg0kEfujJD9ssqW9oNbZaCoXB00jjRZ/7AyS2WrziT6ZAW8+RpyoNtB68lq9W5ZIWV2v7newuOfHBW4pRGONLETYI4BWQyntN1zRUobpHuRLN3SXFzUFyDuS9XrkgSoVhFp1yhNgvOWcvR1bitDsqKUAziecK51JGbDUhffRSp0XkVJmv3nSOKR7tzMmJHbyl0yvaf9f1W/gz/zL5ko5tgmXEOh7lEI2JtnhGj1qIztjVTZr8q4HI=
+  file_glob: true
+  file: 
+     "/home/travis/build/GOGO-d-o-o/libgtop11dotnet/libgtop11dotnet-1.1"
+  on: 
+    tags: false
