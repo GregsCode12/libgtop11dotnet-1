@@ -14,7 +14,6 @@ script:
   - cd libgtop11dotnet-1.1
   - dh_make --createorig --single -y
   - dpkg-buildpackage -us -uc
-before_deploy: "echo 'ready?'"
 deploy:
   provider: releases
   skip_cleanup: true
