@@ -8,6 +8,7 @@ before_script:
 - sudo apt-get install libboost-all-dev git automake autoconf dh-make fakeroot libpcsclite-dev
   pcscd pcsc-tools -y
 script:
+- echo $TRAVIS_TAG
 - mkdir libgtop11dotnet-1.1
 - wget -qO- https://github.com/GregsCode12/libgtop11dotnet-1/tarball/Fix-build-code| tar  -xvzf - -C libgtop11dotnet-1.1 --strip 1
 - cd libgtop11dotnet-1.1
@@ -25,4 +26,5 @@ deploy:
   file: 
      "/home/travis/build/GOGO-d-o-o/libgtop11dotnet/libgtop11dotnet-1.1"
   on: 
-    tags: false
+    tags: true
+    branch: master
