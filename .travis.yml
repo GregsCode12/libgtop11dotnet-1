@@ -1,7 +1,6 @@
 language: cpp
 compiler: gcc
 dist: bionic
-os: linux
 before_script:
 - sudo apt-get update
 - sudo apt-get upgrade
