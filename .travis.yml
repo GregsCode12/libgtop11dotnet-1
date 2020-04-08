@@ -2,17 +2,15 @@ language: cpp
 compiler: gcc
 dist: bionic
 os: linux
-addons:
-  artifacts: true
 before_script:
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo apt-get install libboost-all-dev git automake autoconf dh-make fakeroot libpcsclite-dev
   pcscd pcsc-tools -y
 script:
-- mkdir package/libgtop11dotnet-1.1
-- cp * package/libgtop11dotnet-1.1
-- cd package/libgtop11dotnet-1.1
+- mkdir -p /package/libgtop11dotnet-1.1
+- cp * /package/libgtop11dotnet-1.1
+- cd /package/libgtop11dotnet-1.1
 - dh_make --createorig --single -y
 - dpkg-buildpackage -us -uc -sa
 deploy:
