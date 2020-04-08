@@ -6,8 +6,8 @@ before_script:
 - sudo apt-get upgrade
 - sudo apt-get install libboost-all-dev git automake autoconf dh-make fakeroot libpcsclite-dev
   pcscd pcsc-tools -y
+- sudo mkdir -p /package/libgtop11dotnet-1.1
 script:
-- mkdir -p /package/libgtop11dotnet-1.1
 - cp * /package/libgtop11dotnet-1.1
 - cd /package/libgtop11dotnet-1.1
 - dh_make --createorig --single -y
