@@ -8,10 +8,10 @@ before_script:
   pcscd pcsc-tools -y
 - sudo mkdir -p /package/libgtop11dotnet-1.1
 script:
-- cp * /package/libgtop11dotnet-1.1
-- cd /package/libgtop11dotnet-1.1
-- dh_make --createorig --single -y
-- dpkg-buildpackage -us -uc -sa
+- sudo cp * /package/libgtop11dotnet-1.1
+- sudo cd /package/libgtop11dotnet-1.1
+- sudo dh_make --createorig --single -y
+- sudo dpkg-buildpackage -us -uc -sa
 deploy:
   provider: releases
   skip_cleanup: true
