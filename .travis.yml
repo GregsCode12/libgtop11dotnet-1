@@ -12,6 +12,7 @@ script:
 - cd /package/libgtop11dotnet-1.1
 - sudo dh_make --createorig --single -y
 - sudo dpkg-buildpackage -us -uc -sa -b
+before_deploy: sudo chown -R travis:travis /home/travis/
 deploy:
   provider: releases
   skip_cleanup: true
