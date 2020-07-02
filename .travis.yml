@@ -11,7 +11,7 @@ script:
 - sudo cp -r * /package/libgtop11dotnet-1.1
 - cd /package/libgtop11dotnet-1.1
 - sudo dh_make --createorig --single -y
-- sudo dpkg-buildpackage -us -uc -sa
+- sudo dpkg-buildpackage -us -uc -sa -b
 deploy:
   provider: releases
   skip_cleanup: true
