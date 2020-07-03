@@ -24,6 +24,6 @@ deploy:
      secure: "jGFORDOLArzLfyx9gOIHF7fiKJG7N4ZL2v0AYqwXsB/yJftYBfA+ldHgbdP2n708NxxRXDW1y6x4MGs5ObekMvv+yLPMy0rT6dYXWZCPXCx5Rqedn/5W+ixYab04+QJOD//PHZh/U/8V/WOX+fhGqZZsXN2u4ZA51CF3tIqrNkbtC2bRwHjAudczSzaDFZXwvIHtNQgAZPhMMK5mjd/QhCiX6Mp73qrW30lTvEcubsM/bfa/x8y71LT2tiEdV6Ehz34NsXhbWXj7EoQaCYyiGtPDCgji67NXLvKaeSP2ee4kSEs+VRoN/apzaVXN/MVJstiLagjYoyZqRjK9C0VJ/G8oHKXtniv/YB0SEwiGX+oi7feJKQjYnCwzqaYj9Rik0VNuZu5YvaFZwqFF8H90OSeaC99f84mMH8em70wIdzGR67q4GFvApaWE0WLmUMNV6KM/TtbLIFHTW+Lz8r2nDSbSXcXI+ildpRtLWT5fpko7iAW/IBJH8V9ugKnREyUjZLIDwFFxCxwFmZtXp6SzXS1ITGT3kxPn2/Y2YhDSLgsE5JWQwoNVc4HNx8CbzNxUQVu+tJpX3jNFG1BXlx96BN0Blj8/p4J0xneGBsxnAuLB+LIswA3kfSripjE7YImFet+RR98v2ciRse8dSF1XJhLrxTJlg2ajeg9Fo5+4KXc="
   file_glob: true
   file: 
-     "/home/travis/build/GOGO-d-o-o/libgtop11dotnet/libgtop11dotnet-1.1"
+     "/home/travis/build/package/libgtop11dotnet/libgtop11dotnet-1.1"
   on: 
     tags: false
